@@ -12,9 +12,20 @@
 <body>
 
 <header>
-  <!-- SWAP: your name, your words -->
-  <h1>Erin Sun</h1>
-  <p>Mechanical Engineer ~ Santa Barbara</p>
+  <div class="header-info">
+    <h1>Erin Sun</h1>
+    <p>Mechanical Engineer ~ Santa Barbara</p>
+  </div>
+
+  <nav class="table-of-contents">
+    <p class="toc-title">Selected Work</p>
+
+    <a href="#capstone">01 — Senior Capstone</a>
+    <a href="#wishkeeper">02 — The Wishkeeper</a>
+    <a href="#xbox">03 — Xbox Charging Dock</a>
+    <a href="#hearts">04 — Russian Nesting Hearts</a>
+    <a href="#rain">05 — A Night in the Rain</a>
+  </nav>
 </header>
 
 <main>
@@ -29,37 +40,22 @@
           Delete Larry's leftovers when you are done.
        ============================================================ -->
 
-  <section class="project">
+  <section class="project" id="capstone">
     <h2>Senior Capstone</h2>
     <p class="meta">Engineering | 2025-26 | Collaborative | AllFit</p>
-    <figure class="capstone-collage">
+    <figure class="carousel">
 
-      <div class="collage-item featured">
+      <div class="carousel-slide active">
         <img src="media/sun_capstone_01.jpg" alt="Professionally taken photo of the GymPal device against a black background">
         <figcaption>A photo of the GymPal device, taken in a professional setting.</figcaption>
-      </div> <br>
+      </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_capstone_02.png" alt="The GymPal device attached to a weight stack.">
-        <figcaption>The Gympal device attached to a weight stack.</figcaption>
+        <figcaption>The GymPal device attached to a weight stack.</figcaption>
       </div>
 
-      <div class="collage-item">
-        <img src="media/sun_capstone_03.png" alt="A 3D modeling drawing of the full device.">
-        <figcaption>A SolidWorks assembly drawing of the full device.</figcaption>
-      </div>
-
-      <div class="collage-item">
-        <img src="media/sun_capstone_04.png" alt="A 3D modeling drawing of the main body of the device.">
-        <figcaption>A SolidWorks assembly drawing of the "main body" of the device.</figcaption>
-      </div>
-
-      <div class="collage-item">
-        <img src="media/sun_capstone_05.png" alt="A 3D modeling drawing of the controller part of the device.">
-        <figcaption>A SolidWorks assembly drawing of the "controller" part of the device.</figcaption>
-      </div>
-
-      <div class="collage-item">
+      <div class="carousel-slide">
         <video controls>
           <source src="../media/sun_capstone_06-2.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -67,13 +63,32 @@
         <figcaption>Device testing at the gym.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <video controls>
           <source src="../media/sun_capstone_07-2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <figcaption>Full, comprehensive video about the GymPal.</figcaption>
       </div>
+
+      <div class="carousel-slide">
+        <img src="media/sun_capstone_03.png" alt="A 3D modeling drawing of the full device.">
+        <figcaption>A SolidWorks assembly drawing of the full device.</figcaption>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="media/sun_capstone_04.png" alt="A 3D modeling drawing of the main body of the device.">
+        <figcaption>A SolidWorks assembly drawing of the main body.</figcaption>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="media/sun_capstone_05.png" alt="A 3D modeling drawing of the controller part of the device.">
+        <figcaption>A SolidWorks assembly drawing of the controller.</figcaption>
+      </div>
+
+      <button class="carousel-button prev" aria-label="Previous image">‹</button>
+      <button class="carousel-button next" aria-label="Next image">›</button>
+
     </figure>
     <p>
       The GymPal, the final result of my senior capstone, is a gym accessory made to help people with cerebral palsy
@@ -82,7 +97,7 @@
     </p>
   </section>
 
-  <section class="project">
+  <section class="project" id="wishkeeper">
     <h2>The Wishkeeper</h2>
     <p class="meta">Web Narrative | 2026 | Independent | Erin Sun</p>
     <figure>
@@ -101,7 +116,7 @@
     
   </section>
 
-  <section class="project">
+  <section class="project" id="xbox">
     <h2>Xbox Charging Dock</h2>
     <p class="meta">Design and Protoyping| 2026 | Independent | Erin Sun</p>
     <figure>
@@ -114,40 +129,43 @@
     </p>
   </section>
 
-  <section class="project">
+  <section class="project" id="hearts">
     <h2>Russian Nesting Hearts</h2>
     <p class="meta">Fabrication | 2025 | Independent | Erin Sun</p>
-    <figure class="heart-collage">
+    <figure class="carousel">
 
-      <div class="collage-item">
+      <div class="carousel-slide active">
         <img src="media/sun_hearts_01.jpg" alt="An open lid look into the nesting boxes.">
-        <figcaption>The russian nesting hearts open so all components are visible.</figcaption>
+        <figcaption>An open russian nesting hearts with all components visible.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_hearts_02.JPG" alt="Each component placed in a row from smallest to largest.">
-        <figcaption>Each componenet placed side by side from smallest to largest.</figcaption>
+        <figcaption>Each component placed side by side from smallest to largest.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_hearts_03.JPG" alt="An open laser cut box.">
         <figcaption>The 1st layer and outer box, fabricated through laser cutting plywood and press-fit.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_hearts_04.JPG" alt="A half open, 3D printed heart.">
         <figcaption>The 2nd layer, fabricated through 3D-printing.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_hearts_05.JPG" alt="A half-open paper heart box.">
         <figcaption>The 3rd layer, fabricated through laser cutting paper into a net.</figcaption>
       </div>
 
-      <div class="collage-item">
+      <div class="carousel-slide">
         <img src="media/sun_hearts_06.JPG" alt="A 3D printed heart gem.">
         <figcaption>The 4th layer and smallest component, fabricated through 3D printing.</figcaption>
       </div>
+
+      <button class="carousel-button prev" aria-label="Previous image">‹</button>
+      <button class="carousel-button next" aria-label="Next image">›</button>
 
     </figure>
     <p>
@@ -157,7 +175,7 @@
     </p>
   </section>
 
-  <section class="project">
+  <section class="project" id="rain">
     <h2>A Night in the Rain</h2>
     <p class="meta">Audio Engineering | 2025 | Independent | Erin Sun</p>
     <figure>
@@ -180,6 +198,44 @@
   <!-- SWAP: your name and email -->
   <p>Erin Sun ~ erinsun328@gmail.com ~ 2026</p>
 </footer>
+
+<script>
+  document.querySelectorAll('.carousel').forEach(carousel => {
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const nextButton = carousel.querySelector('.next');
+    const prevButton = carousel.querySelector('.prev');
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides[currentSlide].classList.remove('active');
+
+      currentSlide = index;
+
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      }
+
+      slides[currentSlide].classList.add('active');
+    }
+
+    nextButton.addEventListener('click', () => {
+      showSlide(currentSlide + 1);
+    });
+
+    prevButton.addEventListener('click', () => {
+      showSlide(currentSlide - 1);
+    });
+
+  });
+</script>
+
+<a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 
 </body>
 </html>

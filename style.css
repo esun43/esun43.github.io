@@ -31,10 +31,13 @@ body {
 
 header {
   min-height: 55vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 8rem);
+
   padding: 6rem clamp(2rem, 8vw, 9rem);
+
   background: var(--sage);
   color: var(--paper);
 }
@@ -56,6 +59,54 @@ header p {
   opacity: 0.9;
 }
 
+.header-info {
+  min-width: 0;
+}
+
+/* Table of Contents */
+.table-of-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table-of-contents .toc-title {
+  margin: 0 0 1.5rem;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  opacity: 0.65;
+}
+
+.table-of-contents a {
+  width: 100%;
+  padding: 0.7rem 0;
+
+  color: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(251, 250, 246, 0.3);
+
+  transition:
+    padding-left 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.table-of-contents a:first-of-type {
+  border-top: 1px solid rgba(251, 250, 246, 0.3);
+}
+
+.table-of-contents a:hover {
+  padding-left: 0.5rem;
+  opacity: 0.65;
+}
+
 main {
   width: min(1180px, calc(100% - 3rem));
   margin: 0 auto;
@@ -70,6 +121,7 @@ main {
   padding: 0 0 7rem;
   margin: 0 0 7rem;
   border-bottom: 1px solid var(--line);
+  scroll-margin-top: 100px;
 }
 
 .project-link {
@@ -160,84 +212,115 @@ figure img {
 figcaption {
   margin: 0 0 2rem;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   line-height: 1.5;
 }
 
-/* Russian Nesting Hearts collage */
-.heart-collage {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.heart-collage .collage-item {
-  min-width: 0;
-}
-
-.heart-collage img {
+/* Project carousel */
+.carousel {
+  position: relative;
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-  margin: 0;
 }
 
-.heart-collage .featured {
-  grid-column: span 2;
+.carousel-slide {
+  display: none;
 }
 
-.heart-collage .featured img {
-  height: 260px;
-}
-
-.heart-collage figcaption {
-  margin: 5px 0 12px;
-  font-size: 0.7rem;
-  line-height: 1.4;
-}
-
-/* Capstone collage */
-.capstone-collage {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.capstone-collage .collage-item {
-  min-width: 0;
-}
-
-.capstone-collage img,
-.capstone-collage video {
-  width: 100%;
+.carousel-slide.active {
   display: block;
-  margin: 0;
+}
+
+.carousel-slide img,
+.carousel-slide video {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
   background: var(--paper);
 }
 
-.capstone-collage img {
-  height: 160px;
-  object-fit: cover;
+.carousel-slide figcaption {
+  margin-top: 0.7rem;
+  margin-bottom: 0;
 }
 
-.capstone-collage video {
-  aspect-ratio: 16 / 9;
-  height: auto;
-  object-fit: cover;
+/* Arrow buttons */
+.carousel-button {
+  position: absolute;
+  top: 250px;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 80px;
+
+  border: none;
+
+  background: rgba(32, 35, 31, 0.75);
+  color: var(--paper);
+
+  font-size: 1.5rem;
+  font-family: "DM Sans", sans-serif;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.25s ease,
+    width 0.25s ease;
 }
 
-.capstone-collage .featured {
-  grid-column: span 2;
+.carousel-button:hover {
+  background: var(--sage);
+  width: 48px;
 }
 
-.capstone-collage .featured img {
-  height: 260px;
+/* Attach arrows to image edges */
+.carousel-button.prev {
+  left: 0;
+  border-radius: 0 4px 4px 0;
 }
 
-.capstone-collage figcaption {
-  margin: 5px 0 12px;
-  font-size: 0.7rem;
-  line-height: 1.4;
+.carousel-button.next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--sage);
+  color: var(--paper);
+
+  font-size: 1.4rem;
+  text-decoration: none;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  z-index: 1000;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.back-to-top:hover {
+  background: var(--ink);
+  transform: translateY(-3px);
 }
 
 audio {
@@ -279,19 +362,21 @@ footer {
 
   .project h2 {
     margin-bottom: 0.5rem;
+    order: 1;
   }
 
   .project .meta {
     margin-bottom: 1.5rem;
+    order: 2;
+  }
+
+    figure {
+    order: 3;
   }
 
   .project > p {
-    order: 3;
+    order: 4;
     margin-top: 1.5rem;
-  }
-
-  figure {
-    order: 2;
   }
 
 
