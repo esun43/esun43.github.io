@@ -92,10 +92,10 @@
           Delete Larry's leftovers when you are done.
        ============================================================ -->
 
-  <section class="project reveal" id="capstone">
-    <h2>Senior Capstone</h2>
-    <p class="meta">Engineering | 2025-26 | Collaborative | AllFit</p>
-    <figure class="carousel">
+  <section class="project" id="capstone">
+    <h2 class="reveal">Senior Capstone</h2>
+    <p class="meta reveal">Engineering | 2025-26 | Collaborative | AllFit</p>
+    <figure class="carousel reveal">
 
       <div class="carousel-slide active">
         <img src="media/sun_capstone_01.jpg" alt="Professionally taken photo of the GymPal device against a black background">
@@ -142,25 +142,25 @@
       <button class="carousel-button next" aria-label="Next image">›</button>
 
     </figure>
-    <p>
+    <p class="reveal">
       The GymPal, the final result of my senior capstone, is a gym accessory made to help people with cerebral palsy
       have a more independent experience in the gym. Specifically to make it easier for them to remove the pin out of
       a weight stack and adjust the weight used during an exercise.
     </p>
   </section>
 
-  <section class="project reveal" id="wishkeeper">
-    <h2>The Wishkeeper</h2>
-    <p class="meta">Web Narrative | 2026 | Independent | Erin Sun</p>
-    <figure>
+  <section class="project" id="wishkeeper">
+    <h2 class="reveal">The Wishkeeper</h2>
+    <p class="meta reveal">Web Narrative | 2026 | Independent | Erin Sun</p>
+    <figure class="reveal">
       <img src="media/sun_wishkeeper_01.jpg" alt="The title screen of the game The Wishkeeper asking if you will granta wish">
       <figcaption>The title screen of the game The Wishkeeper.</figcaption>
 
-      <a class="project-link" href="https://esun43.github.io/The-Wishkeeper/" target="_blank">
+      <a class="project-link reveal" href="https://esun43.github.io/The-Wishkeeper/" target="_blank">
         Play The Wishkeeper →
       </a>
     </figure>
-    <p>
+    <p class="reveal">
       The Wishkeeper is an interactive choose your own path type game made for the Web Narratives class of the MAD 
       minor. It was made to encourage players to think carefully about the decisions they make and the impact those 
       decisions can have on others.
@@ -168,23 +168,23 @@
     
   </section>
 
-  <section class="project reveal" id="xbox">
-    <h2>Xbox Charging Dock</h2>
-    <p class="meta">Design and Protoyping | 2026 | Independent | Erin Sun</p>
-    <figure>
+  <section class="project" id="xbox">
+    <h2 class="reveal">Xbox Charging Dock</h2>
+    <p class="meta reveal">Design and Protoyping | 2026 | Independent | Erin Sun</p>
+    <figure class="reveal">
       <img src="media/sun_xbox_01.jpg" alt="initial design sketches">
       <figcaption>Rough ideas and sketches.</figcaption>
     </figure>
-    <p>
+    <p class="reveal">
       This project started from a thought that occurred during a weekly game night with a friend. He said that there was 
       no convenient way to charge Xbox controllers, so as a mechanical engineer I said I would try to design one.
     </p>
   </section>
 
-  <section class="project reveal" id="hearts">
-    <h2>Russian Nesting Hearts</h2>
-    <p class="meta">Fabrication | 2025 | Independent | Erin Sun</p>
-    <figure class="carousel">
+  <section class="project" id="hearts">
+    <h2 class="reveal">Russian Nesting Hearts</h2>
+    <p class="meta reveal">Fabrication | 2025 | Independent | Erin Sun</p>
+    <figure class="carousel reveal">
 
       <div class="carousel-slide active">
         <img src="media/sun_hearts_01.jpg" alt="An open lid look into the nesting boxes.">
@@ -220,17 +220,17 @@
       <button class="carousel-button next" aria-label="Next image">›</button>
 
     </figure>
-    <p>
+    <p class="reveal">
       The Russian Nesting Hearts was a project for the prototype and manufacturing class. The idea was rooted
       in the concept of russian nesting dolls, and each layer was made in the shape of a heart and with slightly
       different fabrication methods.
     </p>
   </section>
 
-  <section class="project reveal" id="rain">
-    <h2>A Night in the Rain</h2>
-    <p class="meta">Audio Engineering | 2025 | Independent | Erin Sun</p>
-    <figure>
+  <section class="project" id="rain">
+    <h2 class="reveal">A Night in the Rain</h2>
+    <p class="meta reveal">Audio Engineering | 2025 | Independent | Erin Sun</p>
+    <figure class="reveal">
       <img src="media/sun_rain_01.jpg" alt="A picture of a cozy room with the fire place lit while it is raining outside.">
       <figcaption>The cover photo for my song: A cozy night inside amidst the pouring rain.</figcaption>
       <audio controls>
@@ -238,7 +238,7 @@
         Your browser does not support the audio element.
       </audio>
     </figure>
-    <p>
+    <p class="reveal">
       A Night in the Rain was the final deliverable for the audio engineering and design class. It is a lofi
       style piece with rain as it's main idea. The tracks layer and build as the night goes on.
     </p>
@@ -299,7 +299,8 @@
       }
     });
   }, {
-    threshold: 0.15
+    threshold: 0,
+    rootMargin: "0px 0px -10% 0px"
   });
 
   revealElements.forEach(element => {
