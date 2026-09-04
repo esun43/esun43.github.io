@@ -12,12 +12,12 @@
 <body>
 
 <header>
-  <div class="header-info">
+  <div class="header-info reveal">
     <h1>Erin Sun</h1>
     <p>Mechanical Engineer ~ Santa Barbara</p>
   </div>
 
-  <nav class="table-of-contents">
+  <nav class="table-of-contents reveal">
   <p class="toc-title">Table of Contents</p>
 
   <a href="#about">01 — About Me</a>
@@ -33,7 +33,7 @@
 
   <section class="about" id="about">
 
-    <div class="about-left">
+    <div class="about-left reveal">
       <img
         src="media/sun_about.jpg"
         alt="Portrait of Erin Sun"
@@ -41,7 +41,7 @@
       >
     </div>
 
-    <div class="about-text">
+    <div class="about-text reveal">
       <h2>About Me</h2>
 
       <p>
@@ -92,7 +92,7 @@
           Delete Larry's leftovers when you are done.
        ============================================================ -->
 
-  <section class="project" id="capstone">
+  <section class="project reveal" id="capstone">
     <h2>Senior Capstone</h2>
     <p class="meta">Engineering | 2025-26 | Collaborative | AllFit</p>
     <figure class="carousel">
@@ -149,7 +149,7 @@
     </p>
   </section>
 
-  <section class="project" id="wishkeeper">
+  <section class="project reveal" id="wishkeeper">
     <h2>The Wishkeeper</h2>
     <p class="meta">Web Narrative | 2026 | Independent | Erin Sun</p>
     <figure>
@@ -168,9 +168,9 @@
     
   </section>
 
-  <section class="project" id="xbox">
+  <section class="project reveal" id="xbox">
     <h2>Xbox Charging Dock</h2>
-    <p class="meta">Design and Protoyping| 2026 | Independent | Erin Sun</p>
+    <p class="meta">Design and Protoyping | 2026 | Independent | Erin Sun</p>
     <figure>
       <img src="media/sun_xbox_01.jpg" alt="initial design sketches">
       <figcaption>Rough ideas and sketches.</figcaption>
@@ -181,7 +181,7 @@
     </p>
   </section>
 
-  <section class="project" id="hearts">
+  <section class="project reveal" id="hearts">
     <h2>Russian Nesting Hearts</h2>
     <p class="meta">Fabrication | 2025 | Independent | Erin Sun</p>
     <figure class="carousel">
@@ -227,14 +227,14 @@
     </p>
   </section>
 
-  <section class="project" id="rain">
+  <section class="project reveal" id="rain">
     <h2>A Night in the Rain</h2>
     <p class="meta">Audio Engineering | 2025 | Independent | Erin Sun</p>
     <figure>
       <img src="media/sun_rain_01.jpg" alt="A picture of a cozy room with the fire place lit while it is raining outside.">
       <figcaption>The cover photo for my song: A cozy night inside amidst the pouring rain.</figcaption>
       <audio controls>
-        <source src="media/sun_rain_02.wav" type="audio/mpeg">
+        <source src="media/sun_rain_02.wav" type="audio/wav">
         Your browser does not support the audio element.
       </audio>
     </figure>
@@ -284,6 +284,26 @@
       showSlide(currentSlide - 1);
     });
 
+  });
+</script>
+
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
   });
 </script>
 
