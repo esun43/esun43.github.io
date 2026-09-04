@@ -434,12 +434,7 @@ footer {
 }
 
 @media (max-width: 720px) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  
+ 
   header {
     min-height: 45vh;
     padding: 4rem 1.5rem;
@@ -518,5 +513,13 @@ footer {
 
   footer {
     padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
