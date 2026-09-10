@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- SWAP: Larry's name for yours -->
   <title>Erin Sun ~ portfolio</title>
@@ -98,7 +98,7 @@
       </div>
 
       <div class="carousel-slide">
-        <video controls>
+        <video controls playsinline>
           <source src="../media/sun_capstone_06-2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -106,7 +106,7 @@
       </div>
 
       <div class="carousel-slide">
-        <video controls>
+        <video controls playsinline>
           <source src="../media/sun_capstone_07-2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -262,6 +262,8 @@
     const prevButton = carousel.querySelector('.prev');
 
     let currentSlide = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     function showSlide(index) {
       slides[currentSlide].classList.remove('active');
@@ -286,6 +288,24 @@
     prevButton.addEventListener('click', () => {
       showSlide(currentSlide - 1);
     });
+
+    // Allow left/right swiping on phones and tablets.
+    carousel.addEventListener('touchstart', (event) => {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (event) => {
+      touchEndX = event.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) < 50) return;
+
+      if (swipeDistance < 0) {
+        showSlide(currentSlide + 1);
+      } else {
+        showSlide(currentSlide - 1);
+      }
+    }, { passive: true });
 
   });
 </script>
