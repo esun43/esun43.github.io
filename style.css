@@ -214,6 +214,35 @@ main {
     transform 0.25s ease;
 }
 
+/* Diagonal external-link arrow */
+.external-arrow {
+  display: inline-block;
+  width: 0.55em;
+  height: 0.55em;
+  margin-left: 0.35em;
+
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+
+  position: relative;
+}
+
+.external-arrow::after {
+  content: "";
+  position: absolute;
+
+  width: 0.7em;
+  height: 1.5px;
+
+  background: currentColor;
+
+  top: 50%;
+  left: -0.15em;
+
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: center;
+}
+
 .project-link:hover {
   background: var(--sage);
   color: var(--paper);
